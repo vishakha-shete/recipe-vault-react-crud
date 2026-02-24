@@ -1,3 +1,9 @@
+```markdown
+![React](https://img.shields.io/badge/React-18-blue)
+![Tailwind](https://img.shields.io/badge/TailwindCSS-3-blueviolet)
+![License](https://img.shields.io/badge/License-MIT-green)
+
+
 # 🍳 Recipe Vault
 
 A modern Recipe Management System built using React following an industry-level folder structure and architecture.
