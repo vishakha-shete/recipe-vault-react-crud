@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { nanoid } from "nanoid";
 import { toast } from "react-toastify";
 
-const CreateRecipe = ({ addRecipe }) => {
+const CreateRecipe = () => {
 
   const {
     register,
@@ -12,16 +12,9 @@ const CreateRecipe = ({ addRecipe }) => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
-    const newRecipe = {
-      id: nanoid(),
-      ...data,
-      price: Number(data.price),
-    };
-
-    addRecipe(newRecipe);
-    toast.success("Recipe Created Successfully 🍳");
-    reset();
+  const submitHandler = (data) => {
+    data.id = nanoid();
+    console.log(data);
   };
 
   return (
@@ -30,7 +23,7 @@ const CreateRecipe = ({ addRecipe }) => {
         Create New Recipe
       </h2>
 
-      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
+      <form onSubmit={handleSubmit(submitHandler)} className="flex flex-col gap-4">
 
         {/* Title */}
         <input

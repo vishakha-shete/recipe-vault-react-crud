@@ -1,15 +1,15 @@
-import React, { useState } from 'react'
-export const recipeContext = recipeContext(null);
+import React, { createContext, useState } from 'react'
+
+export const recipecontext = createContext(null);
 
 const recipeContext = (props) => {
 
-    const [data, setdata] = useState([])
-
+    const [data, setdata] = useState([]);
 
   return (
-    <recipeContext.provider value = {useState([])}>
+    <recipecontext.Provider value = {{data, setdata}}>
       {props.children}
-    </recipeContext.provider>
+    </recipecontext.Provider>
   )
 }
 
